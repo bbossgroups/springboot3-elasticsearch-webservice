@@ -51,7 +51,7 @@ public class DocumentCRUD7 {
 
 		ClientInterface clientUtil = bbossESStarter.getConfigRestClient(mappath);
         clientUtil.getIndexesWithCluster("default");
-        clientUtil.getIndexMappingFieldsWithCluster("default","indiceName");
+        
 		try {
 			//To determine whether the indice demo exists, it returns true if it exists and false if it does not
 			boolean exist = clientUtil.existIndice("demo");
