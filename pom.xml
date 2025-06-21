@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>com.bbossgroups.plugins</groupId>
 			<artifactId>bboss-elasticsearch-spring-boot3-starter</artifactId>
-			<version>7.3.8</version>
+			<version>7.3.9</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>slf4j-log4j12</artifactId>
@@ -74,7 +74,7 @@
 		<dependency>
 			<groupId>com.bbossgroups.plugins</groupId>
 			<artifactId>bboss-datatran-jdbc</artifactId>
-			<version>7.3.8</version>
+			<version>7.3.9</version>
 			<exclusions>
                 <exclusion>
                     <artifactId>slf4j-log4j12</artifactId>
@@ -85,7 +85,7 @@
 		<dependency>
 			<groupId>com.bbossgroups.plugins</groupId>
 			<artifactId>bboss-datatran-hbase</artifactId>
-			<version>7.3.8</version>
+			<version>7.3.9</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>slf4j-log4j12</artifactId>
@@ -96,7 +96,7 @@
 		<dependency>
 			<groupId>com.bbossgroups</groupId>
 			<artifactId>bboss-spring-boot3-starter</artifactId>
-			<version>6.3.8</version>
+			<version>6.3.9</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>slf4j-log4j12</artifactId>
@@ -140,16 +140,44 @@
 		<dependency>
 			<groupId>com.bbossgroups.plugins</groupId>
 			<artifactId>bboss-datatran-fileftp</artifactId>
-			<version>7.3.8</version>
+			<version>7.3.9</version>
 		</dependency>
 		<dependency>
 			<groupId>com.bbossgroups.plugins</groupId>
 			<artifactId>bboss-datatran-kafka2x</artifactId>
 			<!--<version>5.1.40</version>-->
-			<version>7.3.8</version>
+			<version>7.3.9</version>
 		</dependency>
+        
+        <dependency>
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>4.0.27</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.groovy</groupId>
+                    <artifactId>groovy-test</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.groovy</groupId>
+                    <artifactId>groovy-test-junit5</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.dataformat</groupId>
+                    <artifactId>jackson-dataformat-yaml</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.github.javaparser</groupId>
+                    <artifactId>javaparser-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
-		<dependency>
+        <dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka_2.12</artifactId>
 			<version>2.1.0</version>

@@ -15,6 +15,7 @@ package com.example.esbboss.controller;
  * limitations under the License.
  */
 
+import com.example.esbboss.jobflow.JobFlowDemo;
 import com.example.esbboss.service.AutoschedulePauseDataTran;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -35,7 +36,48 @@ public class ScheduleControlDataTranController {
 	@Autowired
 	@Qualifier("autoschedulePauseDataTran")
 	private AutoschedulePauseDataTran dataTran;
+    
+    @Autowired
+    private JobFlowDemo jobFlowDemo;
+    /**
+     * 启动工作流
+     * @return
+     */
+    @RequestMapping("/jobflow/start")
+    public @ResponseBody
+    String startJobFlow(String enableParrelNode){
+        return jobFlowDemo.startJobFlow(  enableParrelNode);
+    }
 
+    /**
+     * 停止工作流
+     * @return
+     */
+    @RequestMapping("/jobflow/stop")
+    public @ResponseBody
+    String stopJobFlow(){
+        return jobFlowDemo.stopJobFlow();
+    }
+
+    /**
+     * 暂停工作流
+     * @return
+     */
+    @RequestMapping("/jobflow/pause")
+    public @ResponseBody
+    String pauseJobFlow(){
+        return jobFlowDemo.pauseJobFlow();
+    }
+
+    /**
+     * 恢复工作流
+     * @return
+     */
+    @RequestMapping("/jobflow/consume")
+    public @ResponseBody
+    String consumeJobFlow(){
+        return jobFlowDemo.consumeJobFlow();
+    }
 	/**
 	 * 启动db-es同步作业
 	 * @return

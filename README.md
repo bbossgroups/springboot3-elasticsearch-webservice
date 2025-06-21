@@ -501,7 +501,18 @@ Db2Eleasticsearch data tran and Metrics job has stopped.
 ```
 
 
+# 6 工作流案例
+## 6.1 启动工作流：
+允许第二个并行节点 http://localhost:808/jobflow/start?enableParrelNode=true
+禁用第二个并行节点 http://localhost:808/jobflow/start?enableParrelNode=false
 
+## 6.2 停止工作流
+http://localhost:808/jobflow/stop
+## 6.3 暂停工作流
+http://localhost:808/jobflow/pause
+
+## 6.4 恢复工作流
+http://localhost:808/jobflow/consume
 # Development document：
 
 https://esdoc.bbossgroups.com/#/development
