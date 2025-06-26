@@ -186,7 +186,7 @@ public class JobFlowDemo {
        
         return importBuilder;
     }
-    public  String startJobFlow(String enableParrelNode){
+    public  String startJobFlow(String enableParrelNode,String oneTime){
         if(jobFlow != null){
             return "作业已经启动，请先停止作业.";
         }
@@ -197,8 +197,15 @@ public class JobFlowDemo {
 //        jobFlowScheduleConfig.setScheduleDate(TimeUtil.addDateHours(new Date(),2));//2小时后开始执行
 //        jobFlowScheduleConfig.setScheduleDate(TimeUtil.addDateMinitues(new Date(),1));//1分钟后开始执行
 //        jobFlowScheduleConfig.setScheduleEndDate(TimeUtil.addDates(new Date(),10));//10天后结束
-        jobFlowScheduleConfig.setScheduleEndDate(TimeUtil.addDateMinitues(new Date(),30));//2分钟后结束
-        jobFlowScheduleConfig.setPeriod(10000L);
+        if(oneTime == null) {
+            jobFlowScheduleConfig.setScheduleEndDate(TimeUtil.addDateMinitues(new Date(), 30));//2分钟后结束
+            jobFlowScheduleConfig.setPeriod(10000L);
+        }
+        else{
+            jobFlowScheduleConfig.setScheduleDate(TimeUtil.addDateMinitues(new Date(),1));//1分钟后开始执行
+            jobFlowScheduleConfig.setExecuteOneTime(true);
+            jobFlowScheduleConfig.setExecuteOneTimeSyn(false);//异步执行
+        }
 //        jobFlowScheduleConfig.setExecuteOneTime(true);
         jobFlowBuilder.setJobFlowScheduleConfig(jobFlowScheduleConfig);
         /**
@@ -313,8 +320,9 @@ public class JobFlowDemo {
         jobFlowBuilder.addJobFlowNode(jobFlowNodeBuilder);
         
         JobFlow jobFlow = jobFlowBuilder.build();
-        jobFlow.start();
         this.jobFlow = jobFlow;
+        jobFlow.start();
+       
         return "作业启动成功";
 ////        
 //        jobFlow.stop();

@@ -45,8 +45,8 @@ public class ScheduleControlDataTranController {
      */
     @RequestMapping("/jobflow/start")
     public @ResponseBody
-    String startJobFlow(String enableParrelNode){
-        return jobFlowDemo.startJobFlow(  enableParrelNode);
+    String startJobFlow(String enableParrelNode,String oneTime){
+        return jobFlowDemo.startJobFlow(  enableParrelNode,  oneTime);
     }
 
     /**
