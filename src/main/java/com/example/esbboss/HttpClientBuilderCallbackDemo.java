@@ -15,7 +15,7 @@ package com.example.esbboss;
  * limitations under the License.
  */
 
-import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 import org.frameworkset.spi.remote.http.ClientConfiguration;
 import org.frameworkset.spi.remote.http.callback.HttpClientBuilderCallback;
 import org.slf4j.Logger;
